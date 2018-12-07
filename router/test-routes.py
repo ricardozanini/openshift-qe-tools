@@ -86,13 +86,13 @@ def check_routes(routes, ignore_selfsign):
         routes[route]["status"] = r.status_code
         
         if r.status_code // httpCodes.SC_OK == 1:
-            print("{}[OK] Route {} is ok. HTTP Status Code is {}{}".format(bcolors.OKGREEN, route, r.status_code, bcolors.ENDC))
+            print("{}[OK] Route {} is ok. HTTP Status Code is {}. Time taken {}{}".format(bcolors.OKGREEN, route, r.status_code, r.elapsed, bcolors.ENDC))
         if r.status_code // httpCodes.SC_REDIRECTION == 1:
-            print("{}[OK] Route {} returned a redirect code. HTTP Status Code is {}{}".format(bcolors.OKGREEN, route, r.status_code, bcolors.ENDC))
+            print("{}[OK] Route {} returned a redirect code. HTTP Status Code is {}. Time taken {}{}".format(bcolors.OKGREEN, route, r.status_code, r.elapsed, bcolors.ENDC))
         if r.status_code // httpCodes.SC_CLIENT_ERR == 1:
-            print("{}[WARN] Route {} returned a client error code. HTTP Status is {}{}".format(bcolors.WARNING, route, r.status_code, bcolors.ENDC))
+            print("{}[WARN] Route {} returned a client error code. HTTP Status is {}. Time taken {}{}".format(bcolors.WARNING, route, r.status_code, r.elapsed, bcolors.ENDC))
         if r.status_code // httpCodes.SC_SERVER_ERR == 1:
-            print("{}[ERROR] Route {} returned a server error code. HTTP Status is {}{}".format(bcolors.FAIL, route, r.status_code, bcolors.ENDC))
+            print("{}[ERROR] Route {} returned a server error code. HTTP Status is {}. Time taken {}{}".format(bcolors.FAIL, route, r.status_code, r.elapsed, bcolors.ENDC))
         
         # TODO: check certificates
 
