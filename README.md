@@ -4,6 +4,17 @@ _(Working in Progress) - use at your own discretion_
 
 A bunch of scripts and tools to ease monitoring, testing and health checking OpenShift 3.x clusters.
 
+## 0. Install Python3 and the required packages
+
+If using RHEL, [follow this guide](https://developers.redhat.com/blog/2018/08/13/install-python3-rhel/) to install `python3`.
+
+Having installed `python3`, install the required modules to run the scripts:
+
+```console
+cd openshift-qe-tools
+python3 -m pip install -r requirements.txt
+```
+
 ## 1. Router
 
 Inside the `router` path we have scripts to check the health of OpenShift routes.
