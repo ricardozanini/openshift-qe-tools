@@ -4,7 +4,9 @@ _(Working in Progress) - use at your own discretion_
 
 A bunch of scripts and tools to ease monitoring, testing and health checking OpenShift 3.x clusters.
 
-## 0. Install Python3 and the required packages
+## 0. Requirements
+
+### Python 3
 
 If using RHEL, [follow this guide](https://developers.redhat.com/blog/2018/08/13/install-python3-rhel/) to install `python3`.
 
@@ -25,10 +27,10 @@ Simple script to check if all your routes are ok. It basically queries the `rout
 
 #### How to use
 
-Simply call `python3 test-routes.py`. The script will use the default `system:admin` user and will login at your local cluster. For more details about usage use:
+Simply call `python3 -m router.test-routes` from the root directory. The script will use the default `system:admin` user and will login at your local cluster. For more details about usage use:
 
 ```console
-$ python3 test-routes.py -h
+$ python3 -m router.test-routes -h
 
 usage: test-routes.py [-h] [-u USER] [-p PASSWORD] [--url URL]
                       [--skip-login [SKIP_LOGIN]] [-k [IGNORE_SELFSIGN]]
